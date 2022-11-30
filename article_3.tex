@@ -11,6 +11,10 @@
 % With extensive modifications by:
 % Vel (vel@latextemplates.com)
 %
+% Changelog (svenwinkelmann):
+% - color schema
+% - changed content/examples to fit trends in media engineering lecture
+%
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
@@ -31,13 +35,13 @@
 %----------------------------------------------------------------------------------------
 
 \setlength{\columnsep}{0.55cm} % Distance between the two columns of text
-\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+\setlength{\fboxrule}{0.0pt} % Width of the border around the abstract
 
 %----------------------------------------------------------------------------------------
 %	COLORS
 %----------------------------------------------------------------------------------------
 
-\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color1}{RGB}{1,83,161} % Color of the article title and sections
 \definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
 
 %----------------------------------------------------------------------------------------
@@ -62,32 +66,29 @@
 %	ARTICLE INFORMATION
 %----------------------------------------------------------------------------------------
 
-\JournalInfo{Journal, Vol. XXI, No. 1, 1-5, 2013} % Journal information
-\Archive{Additional note} % Additional notes (e.g. copyright, DOI, review/research article)
+\JournalInfo{Trends in Media Engineering, BME} % Journal information
+\Archive{WiSe2022/23} % Additional notes (e.g. copyright, DOI, review/research article)
 
-\PaperTitle{Article Title} % Article title
+\PaperTitle{Your Topic} % Article title
 
-\Authors{John Smith\textsuperscript{1}*, James Smith\textsuperscript{2}} % Authors
-\affiliation{\textsuperscript{1}\textit{Department of Biology, University of Examples, London, United Kingdom}} % Author affiliation
-\affiliation{\textsuperscript{2}\textit{Department of Chemistry, University of Examples, London, United Kingdom}} % Author affiliation
-\affiliation{*\textbf{Corresponding author}: john@smith.com} % Corresponding author
+\Authors{Your Name\textsuperscript{1}} % Authors
+\affiliation{\textsuperscript{1}\textit{Nuremberg Institute of Technology, Faculty of Electrical Engineering, Precision Engineering, Information Technology, Germany}} % Author affiliation
 
-\Keywords{Keyword1 --- Keyword2 --- Keyword3} % Keywords - if you don't want any simply remove all the text between the curly brackets
+
+\Keywords{} % Keywords - if you don't want any simply remove all the text between the curly brackets
 \newcommand{\keywordname}{Keywords} % Defines the keywords heading name
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\Abstract{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum. Aenean faucibus. Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac, nulla. Curabitur auctor semper nulla. Donec varius orci eget risus. Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam. Duis eget orci sit amet orci dignissim rutrum.}
+\Abstract{Write a short summary about your topic. The summary should be in a way that someone is able to understand the major results of your work, without reading the complete document. Generally it is a good approach to write 1-2 sentences for each section, thus you will end up with roughly 5-8 sentences.}
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
 \maketitle % Output the title and abstract box
-
-\tableofcontents % Output the contents section
 
 \thispagestyle{empty} % Removes page numbering from the first page
 
@@ -97,65 +98,45 @@
 
 \section*{Introduction} % The \section*{} command stops section numbering
 
-\addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents
+Write in the introduction what your task is and how you want to achieve it: spoken dialog implementation with technology XY. You should also describe your use case (pizza ordering), so that our reader is able to understand the fundamentals (feel free to use some examples from the flinga board we have created during our first lesson). Try to be as concise as possible and use the terminology you have learned during the course. 
 
-\lipsum[1-3] % Dummy text
- and some mathematics $\cos\pi=-1$ and $\alpha$ in the text\footnote{And some mathematics $\cos\pi=-1$ and $\alpha$ in the text.}.
+\section*{Dialog Concept}
 
-%------------------------------------------------
+In this section you should describe the dialog you plan to implement. This may include: 
 
-\section{Methods}
+\begin{itemize}[noitemsep] % this is how you create a bullet list of items. An enumeration you do with \begin{enumerate}[noitemsep]
+	\item Dialog initiative
+	\item Dialog style (state-, frame-, agend-based)
+	\item Intents, slots and output
+\end{itemize}
 
-\begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
-	\includegraphics[width=\linewidth]{view}
-	\caption{Wide Picture}
-	\label{fig:view}
-\end{figure*}
+\noindent As this is your concept, it should not be related too much to the technology in which you implement. If you have a good idea and describe it here and later on you will realize that it is not possible to implement, this is completely fine - as long as you discuss it in the section discussion. 
 
-\lipsum[4] % Dummy text
+\section*{Methods}
 
+In this section you should describe the technology you use for implementing your concept. Describe it in a way that someone else is able to use the technology and help him/her as most as you can. Our readers want to learn from your experiences! Feel free to point them to materials (URLs, Tutorials, Book, Whitepaper, ..) you consider valuable. 
+
+\noindent If you need a mathematical equation you can either include it within text by using $\cos\pi=-1$ or: 
 \begin{equation}
 	\cos^3 \theta =\frac{1}{4}\cos\theta+\frac{3}{4}\cos 3\theta
 	\label{eq:refname2}
 \end{equation}
 
-\lipsum[5] % Dummy text
+\noindent If you want to include an image, add it as png or pdf to the folder Figures and add:
+\begin{figure}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+	\includegraphics[width=\linewidth]{view}  % file name of the image without extension
+	\caption{Picture}
+	\label{fig:view}  % using this label with \ref{fig:view} you can reference it within text
+\end{figure} 
 
-\begin{enumerate}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
-	\item First item in a list
-	\item Second item in a list
-	\item Third item in a list
-\end{enumerate}
+\LaTeX will position the image somewhere on the page, which is completely fine. Do not try to force \LaTeX to insert the image at a specific position, rather link it from text. Example: As shown in  Figure~\ref{fig:view} there is a beautiful view from the mountain.
 
-\subsection{Subsection}
 
-\lipsum[6] % Dummy text
+\section*{Discussion}
 
-\paragraph{Paragraph} \lipsum[7] % Dummy text
-\paragraph{Paragraph} \lipsum[8] % Dummy text
+In this section you discuss your evaluated technology. Your analysis should be from a neutral point of view; our readers do not want to read a glossy marketing text. It should be clear what parts of your concept were possible to implement and which problems you have encountered. To make it clear, it is not your fault if something did not work out, but it will be your fault if you do not discuss it properly. 
 
-\subsection{Subsection}
-
-\lipsum[9] % Dummy text
-
-\begin{figure}[ht]\centering
-	\includegraphics[width=\linewidth]{results}
-	\caption{In-text Picture}
-	\label{fig:results}
-\end{figure}
-
-Reference to Figure \ref{fig:results}.
-
-%------------------------------------------------
-
-\section{Results and Discussion}
-
-\lipsum[10] % Dummy text
-
-\subsection{Subsection}
-
-\lipsum[11] % Dummy text
-
+\noindent Tables are a little bit cumbersome, but you will get used to it:
 \begin{table}[hbt]
 	\caption{Table of Grades}
 	\centering
@@ -172,50 +153,28 @@ Reference to Figure \ref{fig:results}.
 	\label{tab:label}
 \end{table}
 
-\subsubsection{Subsubsection}
+\noindent If you consider it as valuable you may add paragraphs in the following way:
+\paragraph{Pro} \lipsum[8] % Dummy text
 
-\lipsum[12] % Dummy text
+\paragraph{Con} \lipsum[8] % Dummy text
 
-\begin{description}
-	\item[Word] Definition
-	\item[Concept] Explanation
-	\item[Idea] Text
-\end{description}
 
-\subsubsection{Subsubsection}
+\section*{Materials}
 
-\lipsum[13] % Dummy text
-
-\begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
-	\item First item in a list
-	\item Second item in a list
-	\item Third item in a list
+Please add in this section what references you have used. 
+\begin{itemize}[noitemsep] % this is how you create a bullet list of items. An enumeration you do with \begin{enumerate}[noitemsep]
+	\item \url{www.fancytutorialaboutX.com} [28.11.2022]
+	\item Ohm, Georg S.: Best book ever
+	\item Tutorial on newest feature of whatever
 \end{itemize}
-
-\subsubsection{Subsubsection}
-
-\lipsum[14] % Dummy text
-
-\subsection{Subsection}
-
-\lipsum[15-23] % Dummy text
-
-%------------------------------------------------
-
-\phantomsection
-\section*{Acknowledgments} % The \section*{} command stops section numbering
-
-\addcontentsline{toc}{section}{Acknowledgments} % Adds this section to the table of contents
-
-So long and thanks for all the fish \cite{Figueredo:2009dg, Smith:2012qr}.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
-\phantomsection
-\bibliographystyle{unsrt}
-\bibliography{sample.bib}
+%\phantomsection
+%\bibliographystyle{unsrt}
+%\bibliography{sample.bib}
 
 %----------------------------------------------------------------------------------------
 
